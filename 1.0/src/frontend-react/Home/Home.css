@@ -1,0 +1,99 @@
+﻿.header {
+    width: 100%;
+}
+    .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80%;
+    padding: 20px;
+    background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+    color: white;
+    text-align: center;
+}
+
+.home-header {
+    margin-bottom: 50px;
+}
+
+    .home-header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .home-header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+.home-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+    .option-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1976d2;
+}
+
+.option-card h2 {
+    margin-bottom: 15px;
+    color: #1976d2;
+}
+
+.option-card p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.btn-access {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+    .btn-access:hover {
+        background-color: #1565c0;
+    }
+
+/* Ícones do Font Awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .home-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .option-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}

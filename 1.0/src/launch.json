@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Iniciar Todos os Módulos",
+      "configurations": [
+        "Iniciar Backend",
+        "Iniciar Frontend React",
+        "Iniciar Frontend Angular"
+      ],
+      "stopAll": true
+    }
+  ],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Iniciar Backend",
+      "cwd": "${workspaceFolder}/backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [ "run", "dev" ],
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "pattern": "Servidor backend rodando na porta ([0-9]+)",
+        "uriFormat": "http://localhost:%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Iniciar Frontend React",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/frontend-react",
+      "preLaunchTask": "npm: start - frontend-react"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Iniciar Frontend Angular",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/frontend-angular",
+      "preLaunchTask": "npm: start - frontend-angular"
+    }
+  ]
+}

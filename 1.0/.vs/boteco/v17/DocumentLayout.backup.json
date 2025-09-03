@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\htdocs\\repos\\boteco\\1.0\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{161CBAF4-6D63-C51D-E88C-9DB39F83D959}|boteco.esproj|d:\\htdocs\\repos\\boteco\\1.0\\src\\app.cjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{161CBAF4-6D63-C51D-E88C-9DB39F83D959}|boteco.esproj|solutionrelative:src\\app.cjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{161CBAF4-6D63-C51D-E88C-9DB39F83D959}|boteco.esproj|d:\\htdocs\\repos\\boteco\\1.0\\src\\frontend-react\\pages\\fundopagina.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{161CBAF4-6D63-C51D-E88C-9DB39F83D959}|boteco.esproj|solutionrelative:src\\frontend-react\\pages\\fundopagina.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{161CBAF4-6D63-C51D-E88C-9DB39F83D959}|boteco.esproj|d:\\htdocs\\repos\\boteco\\1.0\\src\\frontend-react\\pages\\fundopagina.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{161CBAF4-6D63-C51D-E88C-9DB39F83D959}|boteco.esproj|solutionrelative:src\\frontend-react\\pages\\fundopagina.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.cjs",
+              "DocumentMoniker": "D:\\htdocs\\repos\\boteco\\1.0\\src\\App.cjs",
+              "RelativeDocumentMoniker": "src\\App.cjs",
+              "ToolTip": "D:\\htdocs\\repos\\boteco\\1.0\\src\\App.cjs",
+              "RelativeToolTip": "src\\App.cjs",
+              "ViewState": "AgIAALoDAAAAAAAAAAAowNADAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-27T01:56:17.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FundoPagina.css",
+              "DocumentMoniker": "D:\\htdocs\\repos\\boteco\\1.0\\src\\frontend-react\\pages\\FundoPagina.css",
+              "RelativeDocumentMoniker": "src\\frontend-react\\pages\\FundoPagina.css",
+              "ToolTip": "D:\\htdocs\\repos\\boteco\\1.0\\src\\frontend-react\\pages\\FundoPagina.css",
+              "RelativeToolTip": "src\\frontend-react\\pages\\FundoPagina.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-08T19:43:22.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FundoPagina.jsx",
+              "DocumentMoniker": "D:\\htdocs\\repos\\boteco\\1.0\\src\\frontend-react\\pages\\FundoPagina.jsx",
+              "RelativeDocumentMoniker": "src\\frontend-react\\pages\\FundoPagina.jsx",
+              "ToolTip": "D:\\htdocs\\repos\\boteco\\1.0\\src\\frontend-react\\pages\\FundoPagina.jsx",
+              "RelativeToolTip": "src\\frontend-react\\pages\\FundoPagina.jsx",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAewFcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-08-08T19:41:46.246Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

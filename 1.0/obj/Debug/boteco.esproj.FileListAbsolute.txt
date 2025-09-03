@@ -1,0 +1,3 @@
+D:\htdocs\repos\boteco\obj\Debug\boteco.esproj.CoreCompileInputs.cache
+D:\htdocs\repos\boteco\1.1\obj\Debug\boteco.esproj.CoreCompileInputs.cache
+D:\htdocs\repos\boteco\1.0\obj\Debug\boteco.esproj.CoreCompileInputs.cache

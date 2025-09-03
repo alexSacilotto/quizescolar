@@ -1,0 +1,30 @@
+.resultado-aluno {
+    text-align: center;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+.resultado-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+    .resultado-info p {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+.btn-voltar {
+    padding: 12px 25px;
+    background-color: white;
+    color: #1976d2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 16px;
+}

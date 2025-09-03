@@ -1,0 +1,59 @@
+.lista-testes {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.testes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.teste-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .teste-card:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .teste-card h2 {
+        margin-bottom: 10px;
+    }
+
+    .teste-card p {
+        margin: 5px 0;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+.dificuldade {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 5px;
+    text-transform: capitalize;
+}
+
+    .dificuldade.facil {
+        background-color: rgba(46, 125, 50, 0.7);
+    }
+
+    .dificuldade.medio {
+        background-color: rgba(255, 143, 0, 0.7);
+    }
+
+    .dificuldade.dificil {
+        background-color: rgba(211, 47, 47, 0.7);
+    }
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+}

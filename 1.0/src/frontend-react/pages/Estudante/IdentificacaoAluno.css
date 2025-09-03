@@ -1,0 +1,96 @@
+/* Reset de margens padrão para garantir que ocupe toda a tela */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.identificacao-aluno {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1976d2; /* Fundo azul conforme especificado */
+    color: white; /* Texto branco conforme especificado */
+}
+
+.identificacao-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Alterado para 90% para melhor responsividade */
+    max-width: 400px;
+    color: #333; /* Cor do texto dentro do box */
+}
+
+    .identificacao-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #1976d2; /* Mantém o azul para o título */
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #333; /* Cor escura para melhor contraste no fundo branco */
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box; /* Garante que padding não aumente a largura */
+    }
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s; /* Suave transição de cor */
+}
+
+    button[type="submit"]:hover {
+        background-color: #1565c0;
+    }
+
+    button[type="submit"]:disabled {
+        background-color: #90caf9;
+        cursor: not-allowed;
+    }
+
+/* Adicionando responsividade para telas menores */
+@media (max-width: 480px) {
+    .identificacao-box {
+        padding: 20px;
+        width: 85%;
+    }
+
+        .identificacao-box h2 {
+            font-size: 1.5rem;
+        }
+
+    .form-group input {
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,61 @@
+﻿<!-- frontend/src/app/modules/teacher/create-user/create-user.component.html -->
+<div class="create-user-container">
+    <h2>Criar Novo Usuário</h2>
+
+    <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Nome de Usuário</label>
+            <input type="text" id="username" formControlName="username" class="form-control">
+            <div *ngIf="createUserForm.get('username')?.invalid &&
+                  (createUserForm.get('username')?.dirty || createUserForm.get('username')?.touched)"
+                 class="error-message">
+                <div *ngIf="createUserForm.get('username')?.errors?.['required']">
+                    Nome de usuário é obrigatório
+                </div>
+                <div *ngIf="createUserForm.get('username')?.errors?.['minlength']">
+                    Mínimo de 3 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" formControlName="password" class="form-control">
+            <div *ngIf="createUserForm.get('password')?.invalid &&
+                  (createUserForm.get('password')?.dirty || createUserForm.get('password')?.touched)"
+                 class="error-message">
+                <div *ngIf="createUserForm.get('password')?.errors?.['required']">
+                    Senha é obrigatória
+                </div>
+                <div *ngIf="createUserForm.get('password')?.errors?.['minlength']">
+                    Mínimo de 6 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirmar Senha</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+            <div *ngIf="createUserForm.errors?.['mismatch'] &&
+                  (createUserForm.get('confirmPassword')?.dirty || createUserForm.get('confirmPassword')?.touched)"
+                 class="error-message">
+                As senhas não coincidem
+            </div>
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!createUserForm.valid">
+            Criar Usuário
+        </button>
+        <button type="button" class="btn btn-secondary ml-2" (click)="router.navigate(['/teacher/dashboard'])">
+            Voltar
+        </button>
+    </form>
+</div>

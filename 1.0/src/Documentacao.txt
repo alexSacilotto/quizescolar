@@ -1,0 +1,168 @@
+﻿quiz-escolar/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── app.js
+│   ├── package.json
+│   └── database.sql
+├── frontend-react/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+├── frontend-angular/
+│   ├── src/
+│   │   ├── app/
+│   │   ├── assets/
+│   │   ├── environments/
+│   │   └── ...
+│   └── package.json
+└── README.md
+
+1. Descrição do projeto
+
+Este projeto é um sistema de quiz escolar que permite a criação, gerenciamento e aplicação de testes com questões de múltipla escolha. O sistema é dividido em três partes principais: backend (API), frontend em React e frontend em Angular.
+
+2. Estrutura do projeto
+
+2.1 - Banco de Dados
+O banco de dados é estruturado para suportar usuários (professores), temas, questões, alternativas, testes e respostas dos alunos. Abaixo está o script SQL para criar as tabelas necessárias.
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS quiz_escolar;
+USE quiz_escolar;
+
+-- Tabela de usuários (professores)
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Inserir usuário admin padrão
+INSERT INTO usuarios (login, senha, nome) VALUES ('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MrYV6Z6E7Dp6HjJqtiJjX7ZHwJQYdOa', 'Administrador');
+
+-- Tabela de temas
+CREATE TABLE temas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de questões
+CREATE TABLE questoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tema_id INT NOT NULL,
+    enunciado TEXT NOT NULL,
+    imagem VARCHAR(255),
+    dificuldade ENUM('facil', 'medio', 'dificil') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (tema_id) REFERENCES temas(id) ON DELETE CASCADE
+);
+
+-- Tabela de alternativas
+CREATE TABLE alternativas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    questao_id INT NOT NULL,
+    texto TEXT NOT NULL,
+    correta BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (questao_id) REFERENCES questoes(id) ON DELETE CASCADE
+);
+
+-- Tabela de testes
+CREATE TABLE testes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    titulo VARCHAR(100) NOT NULL,
+    tema_id INT,
+    dificuldade ENUM('facil', 'medio', 'dificil'),
+    quantidade_questoes INT DEFAULT 10,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (tema_id) REFERENCES temas(id) ON DELETE SET NULL
+);
+
+-- Tabela de questões do teste
+CREATE TABLE teste_questoes (
+    teste_id INT NOT NULL,
+    questao_id INT NOT NULL,
+    PRIMARY KEY (teste_id, questao_id),
+    FOREIGN KEY (teste_id) REFERENCES testes(id) ON DELETE CASCADE,
+    FOREIGN KEY (questao_id) REFERENCES questoes(id) ON DELETE CASCADE
+);
+
+-- Tabela de alunos
+CREATE TABLE alunos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    numero VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de respostas
+CREATE TABLE respostas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    teste_id INT NOT NULL,
+    aluno_id INT NOT NULL,
+    questao_id INT NOT NULL,
+    alternativa_id INT NOT NULL,
+    correta BOOLEAN NOT NULL,
+    data_resposta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (teste_id) REFERENCES testes(id) ON DELETE CASCADE,
+    FOREIGN KEY (aluno_id) REFERENCES alunos(id) ON DELETE CASCADE,
+    FOREIGN KEY (questao_id) REFERENCES questoes(id) ON DELETE CASCADE,
+    FOREIGN KEY (alternativa_id) REFERENCES alternativas(id) ON DELETE CASCADE
+);
+
+2.2 - Backend
+O backend é implementado em Node.js utilizando o framework Express. Ele fornece uma API RESTful para gerenciar usuários, temas, questões, testes e respostas. As principais rotas incluem:
+- `/api/usuarios`: Gerenciamento de usuários (login, cadastro).
+- `/api/temas`: Gerenciamento de temas (criação, listagem).
+- `/api/questoes`: Gerenciamento de questões (criação, listagem, atualização).
+- `/api/testes`: Gerenciamento de testes (criação, aplicação).
+- `/api/respostas`: Registro de respostas dos alunos.
+- `/api/alunos`: Gerenciamento de alunos (cadastro, listagem).
+
+2.3 - Frontend
+O frontend é dividido em duas partes: uma aplicação em React e outra em Angular. Ambas as aplicações consomem a API do backend para exibir e gerenciar os dados.
+2.3.1 - Frontend em React
+A aplicação em React é estruturada com componentes reutilizáveis e páginas para gerenciar usuários, temas, questões e testes. As principais funcionalidades incluem:
+- Login e cadastro de usuários (professores).
+- Criação e gerenciamento de temas.
+- Criação e gerenciamento de questões com alternativas.
+- Criação e aplicação de testes.
+- Registro de respostas dos alunos.
+2.3.2 - Frontend em Angular
+A aplicação em Angular segue uma estrutura modular, com componentes e serviços para interagir com a API do backend. As principais funcionalidades incluem:
+- Login e cadastro de usuários (professores).
+- Criação e gerenciamento de temas.
+- Criação e gerenciamento de questões com alternativas.
+- Criação e aplicação de testes.
+- Registro de respostas dos alunos.
+
+3. Instruções de instalação e execução
+3.1 - Backend
+Para instalar e executar o backend, siga os passos abaixo:
+
+
+
+*******************Correções implementadas:*******************
+************************BANCO DE DADOS************************
+- Solução para acesso a rede:
+
+DROP USER 'quiz_app'@'localhost';
+CREATE USER 'quiz_app'@'%' IDENTIFIED BY 'ShowCiencia123';
+GRANT ALL PRIVILEGES ON *.* TO 'quiz_app'@'%';
+FLUSH PRIVILEGES;
+
+- Ajuste para cronômetro
+
+ALTER TABLE testes ADD COLUMN tempo_limite INT DEFAULT NULL;
+**************************************************************
